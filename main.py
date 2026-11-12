@@ -24,7 +24,7 @@ def test_cli():
     print("=== Testing Gemini CLI Subprocess ===")
     try:
         result = subprocess.run(
-            ["gemini", "Dev Containers環境からの動作テストです"],
+            ["gemini", "-p", "Dev Containers環境からの動作テストです"],
             capture_output=True,
             text=True,
             check=True,
