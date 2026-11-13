@@ -23,15 +23,21 @@ def test_sdk():
 def test_cli():
     print("=== Testing Gemini CLI Subprocess ===")
     try:
+        env = os.environ.copy()
+
         result = subprocess.run(
             ["gemini", "-p", "Dev Containers環境からの動作テストです"],
             capture_output=True,
             text=True,
             check=True,
+            env=env,
         )
         print(f"CLI Response:\n{result.stdout.strip()}\n")
     except (subprocess.CalledProcessError, FileNotFoundError) as e:
         print(f"CLI test omitted or failed: {e}\n")
+        if isinstance(e, subprocess.CalledProcessError):
+            print(f"Error output:\n{e.stderr}")
+        print()
 
 if __name__ == "__main__":
     test_sdk()
