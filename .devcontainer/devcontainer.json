@@ -1,24 +1,15 @@
 {
-  "name": "Gemini CLI & Python Playground",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers-extra/features/uv:1": {}
+  "name": "Gemini CLI Playground",
+  "image": "us-docker.pkg.dev/gemini-code-dev/gemini-cli/sandbox:0.68.0",
+  "containerEnv": {
+    "GEMINI_CLI_TRUST_WORKSPACE": "true"
   },
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
-        "ms-python.vscode-pylance",
-        "charliermarsh.ruff"
+        "ms-python.vscode-pylance"
       ]
-    }
-  },
-  "postCreateCommand": "uv sync && npm install -g @google/gemini-cli",
-  "remoteEnv": {
-    "PATH": "${containerWorkspaceFolder}/.venv/bin:${containerEnv:PATH}"
-  },
-  "containerEnv": {
-    "GEMINI_API_KEY": "${localEnv:GEMINI_API_KEY}"
+   }
   }
 }

@@ -24,6 +24,8 @@ def test_cli():
     print("=== Testing Gemini CLI Subprocess ===")
     try:
         env = os.environ.copy()
+        # サブプロセス実行時のみ、このワークスペースを信頼する環境変数をインジェクション
+        env["GEMINI_CLI_TRUST_WORKSPACE"] = "true"
 
         result = subprocess.run(
             ["gemini", "-p", "Dev Containers環境からの動作テストです"],
