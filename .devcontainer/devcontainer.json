@@ -17,5 +17,8 @@
   "postCreateCommand": "uv sync && npm install -g @google/gemini-cli",
   "remoteEnv": {
     "PATH": "${containerWorkspaceFolder}/.venv/bin:${containerEnv:PATH}"
+  },
+  "containerEnv": {
+    "GEMINI_API_KEY": "${localEnv:GEMINI_API_KEY}"
   }
 }
