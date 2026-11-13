@@ -9,11 +9,14 @@ VS Code + Dev Containers + Python (uv) + Gemini CLI によるAIプロトタイ�
 1. `.env.example` をコピーして `.env` を作成し、APIキーを設定:
 ```bash 
 cp .env.example .env
+```
 
-2. `uv sync`のビルド可否を確認する
+2. `uv sync`のビルド可否を確認する:
 ```bash
 uv sync
+```
 
-3. `uv run`でPythonスクリプトを実行する
+3. `uv run`でPythonスクリプトを実行する:
 ```bash
 uv run python main.py
+```
