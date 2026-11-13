@@ -15,7 +15,7 @@ def test_sdk():
 
     client = genai.Client(api_key=api_key)
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3.6-flash",
         contents="Gemini CLI と Dev Containers を組み合わせた開発環境のメリットを1文で教えて。",
     )
     print(f"SDK Response:\n{response.text}\n")
