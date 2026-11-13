@@ -20,3 +20,10 @@ uv sync
 ```bash
 uv run python main.py
 ```
+
+## テスト手順 
+- `uv run pytest`でpytestを実行する:
+
+```bash
+uv run pytest test_main.py
+```
